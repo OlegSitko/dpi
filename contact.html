@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    // Создаем новый объект XMLHttpRequest
+    var xhttp = new XMLHttpRequest();
+    // Открываем файл footer.xml
+    xhttp.open("GET", "./xml/footer.xml", true);
+    // Когда файл загружен
+    xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        // Заменяем пустой футер данными из XML файла
+        document.getElementById("myForm").innerHTML = this.responseText;
+    }
+    };
+    // Загружаем файл
+    xhttp.send();
+</script>
+        <div class="menu">
+            <h2 class="titre-menu">Меню</h2>
+            <ul class="liste-menu">
+                <li class="item-nav"><a href="index.html">Главная</a></li>
+                <li class="item-nav"><a href="informations.html">Информация</a></li>
+                <li class="item-nav"><a href="portfolio.html">Все наши объекты</a></li>
+                <li class="item-nav"><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div>
+        
+        <h1 class="titre-contact">Свяжитесь с нами!</h1>
+    <p class="contact-sous-titre">Свяжитесь с нами по телефону или почте.</p>
+
+    <div class="trois-contacts">
+        <div class="box">
+            <img src="ressources/placeholder.svg">
+            <span>25 Бобруйскя, 88888 Минск</span>
+        </div>
+        <div class="box">
+            <img src="ressources/phone-call.svg">
+            <span>+375 29 354 1777</span>
+        </div>
+        <div class="box">
+            <img src="ressources/email.svg">
+            <span>contact@yakout.com</span>
+        </div>
+    </div>
+
+<!-- Form -->
+    <form id="myForm">
+       <!-- пустая форма, который автоматически подменяется данными из xml файла -->
+    </form>
+    
+    <footer>Все права защищены ©OlegSetka</footer>
+
+</body>
+</html>
